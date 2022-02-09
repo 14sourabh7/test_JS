@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #errorName {
+        color: red;
+      }
+      #errorMobile {
+        color: red;
+      }
+      label {
+        margin: 20px;
+      }
+      input {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <label for="name">
+        name -
+        <input type="text" id="name" />
+      </label>
+      <p id="errorName"></p>
+      <br />
+      <label for="mobile">
+        mobile -
+        <input type="text" id="mobile" />
+      </label>
+
+      <p id="errorMobile"></p>
+      <br />
+      <input type="button" value="submit" onClick="submitData()" />
+      <br />
+      <p id="success"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
