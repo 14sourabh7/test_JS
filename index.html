@@ -6,38 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      #wrapper {
+        width: 50%;
+        height: 30%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 20px;
+        margin-top: 10%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        font-weight: bold;
+        font-size: large;
+      }
+      p {
+        font-size: small;
+        font-weight: normal;
+      }
       #errorName {
         color: red;
       }
       #errorMobile {
         color: red;
       }
-      label {
-        margin: 20px;
+      .btn {
+        width: 30%;
+        height: 35px;
+        font-weight: bold;
+        font-size: large;
+        color: white;
+        background-color: #2da44e;
+        border: none;
+        border-radius: 10px;
       }
-      input {
-        margin-bottom: 20px;
+      #success {
+        margin-left: 10%;
+        font-size: medium;
       }
     </style>
   </head>
   <body>
     <div id="wrapper">
+      <h1>Enter details</h1>
       <label for="name">
-        name -
+        Name -
         <input type="text" id="name" />
       </label>
       <p id="errorName"></p>
-      <br />
+
       <label for="mobile">
-        mobile -
+        Mobile -
         <input type="text" id="mobile" />
       </label>
 
       <p id="errorMobile"></p>
+
+      <input class="btn" type="button" value="submit" onClick="submitData()" />
       <br />
-      <input type="button" value="submit" onClick="submitData()" />
-      <br />
-      <p id="success"></p>
+      <h1 id="success"></h1>
     </div>
     <script src="script.js"></script>
   </body>
