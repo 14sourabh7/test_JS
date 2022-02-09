@@ -28,12 +28,22 @@ function submitData() {
     if (isNaN(mobile)) {
       document.getElementById("errorMobile").innerHTML =
         "*Mobile number should be numeric";
+
       document.getElementById("mobile").style.borderColor = "red";
       document.getElementById("wrapper").style.boxShadow =
         "rgba(255, 10, 31, 0.616) 0px 7px 29px 0px";
     } else {
-      document.getElementById("mobile").style.borderColor = "black";
-      document.getElementById("errorMobile").innerHTML = "";
+      if (mobile.length == 0) {
+        document.getElementById("mobile").style.borderColor = "black";
+        document.getElementById("errorMobile").innerHTML = "";
+      } else {
+        document.getElementById("mobile").style.borderColor = "red";
+        document.getElementById("errorMobile").innerHTML =
+          "*Mobile number must be of 10 digits.";
+
+        document.getElementById("wrapper").style.boxShadow =
+          "rgba(255, 10, 31, 0.616) 0px 7px 29px 0px";
+      }
     }
   } else {
     document.getElementById("errorMobile").innerHTML =
@@ -57,13 +67,6 @@ function submitData() {
 
         document.getElementById("success").innerHTML =
           "Submitted Successfully - " + name + ":" + mobile + "."; //final result
-      } else {
-        document.getElementById("mobile").style.borderColor = "red";
-        document.getElementById("errorMobile").innerHTML =
-          "*Mobile number must be of 10 digits.";
-
-        document.getElementById("wrapper").style.boxShadow =
-          "rgba(255, 10, 31, 0.616) 0px 7px 29px 0px";
       }
     }
   }
